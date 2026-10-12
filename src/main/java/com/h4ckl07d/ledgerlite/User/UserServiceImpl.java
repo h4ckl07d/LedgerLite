@@ -23,7 +23,7 @@ public class UserServiceImpl implements UserService{
         User user = new User();
         user.setEmail(request.email());
         user.setName(request.name());
-        user.setRole(request.role());
+
 
         String hashedPassword = passwordEncoder.encode(request.password());
         user.setPassword(hashedPassword);
