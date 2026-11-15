@@ -7,6 +7,7 @@ import lombok.Setter;
 
 
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 @Data
 @NoArgsConstructor
@@ -27,7 +28,7 @@ public class User {
             name = "id",
             nullable = false
     )
-    private Long id;
+    private UUID id;
 
     @Setter
     @Column(
@@ -46,18 +47,18 @@ public class User {
 
     @Setter
     @Column(
-            name = "password",
+            name = "password_hash",
             nullable  = false
     )
-    private String password;
+    private String password_hash;
 
     @Setter
     @Enumerated(EnumType.STRING)
     @Column(
-            name = "user_role",
+            name = "role",
             nullable = false
     )
-    private RoleEnum role;
+    private Role role = Role.USER;
 
     @Column(
             name = "created_At",
@@ -68,9 +69,9 @@ public class User {
     protected void onCreate() {this.created_At = LocalDateTime.now();}
 
 
-    public User(String email, String password, RoleEnum role, String name) {
+    public User(String email, String password_hash, Role role, String name) {
         this.email = email;
-        this.password = password;
+        this.password_hash = password_hash;
         this.role = role;
         this.name = name;
     }

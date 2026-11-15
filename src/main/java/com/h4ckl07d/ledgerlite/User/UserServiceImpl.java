@@ -2,9 +2,10 @@ package com.h4ckl07d.ledgerlite.User;
 
 import com.h4ckl07d.ledgerlite.User.dto.request.CreateUserRequest;
 import com.h4ckl07d.ledgerlite.User.dto.response.UserResponse;
-import jdk.jshell.spi.ExecutionControl;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
 
+@Service
 public class UserServiceImpl implements UserService{
     UserRepository userRepository;
     PasswordEncoder passwordEncoder;
@@ -26,7 +27,7 @@ public class UserServiceImpl implements UserService{
 
 
         String hashedPassword = passwordEncoder.encode(request.password());
-        user.setPassword(hashedPassword);
+        user.setPassword_hash(hashedPassword);
 
         User response = userRepository.save(user);
         return UserResponse.from(response);
