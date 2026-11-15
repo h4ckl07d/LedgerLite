@@ -1,14 +1,17 @@
 package com.h4ckl07d.ledgerlite.User.dto.response;
 
+import com.h4ckl07d.ledgerlite.User.Role;
 import com.h4ckl07d.ledgerlite.User.User;
 
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 public record UserResponse(
-        Long id,
+        UUID id,
         String name,
         String email,
-        LocalDateTime created_At
+        LocalDateTime created_At,
+        Role role
 ) {
 
     public static UserResponse from(User user) {
@@ -16,7 +19,8 @@ public record UserResponse(
                 user.getId(),
                 user.getName(),
                 user.getEmail(),
-                user.getCreated_At()
+                user.getCreated_At(),
+                user.getRole()
         );
     }
 }
