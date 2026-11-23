@@ -1,9 +1,10 @@
-package com.h4ckl07d.ledgerlite.Auth;
+package com.h4ckl07d.ledgerlite.auth;
 
 
-import com.h4ckl07d.ledgerlite.User.User;
-import com.h4ckl07d.ledgerlite.User.dto.request.CreateUserRequest;
-import com.h4ckl07d.ledgerlite.User.dto.response.UserResponse;
+import com.h4ckl07d.ledgerlite.auth.dto.LoginRequest;
+import com.h4ckl07d.ledgerlite.auth.dto.LoginResponse;
+import com.h4ckl07d.ledgerlite.user.dto.request.CreateUserRequest;
+import com.h4ckl07d.ledgerlite.user.dto.response.UserResponse;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -29,5 +30,14 @@ public class AuthController {
        return ResponseEntity
                .status(HttpStatus.CREATED)
                .body(response);
+    }
+
+    @PostMapping("/login")
+    public ResponseEntity<LoginResponse> login(
+            @Valid @RequestBody LoginRequest request) {
+
+        LoginResponse response = authService.login(request);
+
+        return ResponseEntity.ok(response);
     }
 }

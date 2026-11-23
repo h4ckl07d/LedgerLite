@@ -1,0 +1,5 @@
+ALTER TABLE users
+ADD COLUMN name VARCHAR(100) DEFAULT NULL,
+ADD CONSTRAINT chk_users_role CHECK (role IN ('USER', 'ADMIN'));
+
+DROP INDEX IF EXISTS idx_users_email;

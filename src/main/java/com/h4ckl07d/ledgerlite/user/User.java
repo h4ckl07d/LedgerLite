@@ -1,4 +1,4 @@
-package com.h4ckl07d.ledgerlite.User;
+package com.h4ckl07d.ledgerlite.user;
 
 import jakarta.persistence.*;
 import lombok.Data;

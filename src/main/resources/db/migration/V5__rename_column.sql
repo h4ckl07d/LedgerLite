@@ -1,0 +1,1 @@
+ALTER TABLE refresh_token RENAME COLUMN revoke_at TO revoked_at;

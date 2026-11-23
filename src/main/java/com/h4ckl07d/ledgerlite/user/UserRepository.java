@@ -1,6 +1,5 @@
-package com.h4ckl07d.ledgerlite.User;
+package com.h4ckl07d.ledgerlite.user;
 
-import org.springframework.data.domain.Example;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

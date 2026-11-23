@@ -1,4 +1,4 @@
-package com.h4ckl07d.ledgerlite.User.dto.request;
+package com.h4ckl07d.ledgerlite.user.dto.request;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;

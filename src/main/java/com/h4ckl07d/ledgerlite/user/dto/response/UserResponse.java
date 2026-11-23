@@ -1,7 +1,7 @@
-package com.h4ckl07d.ledgerlite.User.dto.response;
+package com.h4ckl07d.ledgerlite.user.dto.response;
 
-import com.h4ckl07d.ledgerlite.User.Role;
-import com.h4ckl07d.ledgerlite.User.User;
+import com.h4ckl07d.ledgerlite.user.Role;
+import com.h4ckl07d.ledgerlite.user.User;
 
 import java.time.LocalDateTime;
 import java.util.UUID;

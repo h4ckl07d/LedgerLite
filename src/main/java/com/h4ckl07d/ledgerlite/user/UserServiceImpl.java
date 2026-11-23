@@ -1,7 +1,7 @@
-package com.h4ckl07d.ledgerlite.User;
+package com.h4ckl07d.ledgerlite.user;
 
-import com.h4ckl07d.ledgerlite.User.dto.request.CreateUserRequest;
-import com.h4ckl07d.ledgerlite.User.dto.response.UserResponse;
+import com.h4ckl07d.ledgerlite.user.dto.request.CreateUserRequest;
+import com.h4ckl07d.ledgerlite.user.dto.response.UserResponse;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 

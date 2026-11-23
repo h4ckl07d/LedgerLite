@@ -1,10 +1,13 @@
-package com.h4ckl07d.ledgerlite.Auth.dto;
+package com.h4ckl07d.ledgerlite.auth.dto;
 
-import com.h4ckl07d.ledgerlite.User.User;
+import com.h4ckl07d.ledgerlite.user.User;
+
+import java.util.UUID;
 
 public record LoginResponse(
         String token,
-        Long id,
+        UUID id,
+        String name,
         String email
 ) {
 
@@ -12,6 +15,7 @@ public record LoginResponse(
         return new LoginResponse(
                 token,
                 user.getId(),
+                user.getName(),
                 user.getEmail());
     }
 }

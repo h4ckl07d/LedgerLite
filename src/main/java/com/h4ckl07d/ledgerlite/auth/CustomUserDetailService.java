@@ -1,7 +1,7 @@
-package com.h4ckl07d.ledgerlite.Auth;
+package com.h4ckl07d.ledgerlite.auth;
 
-import com.h4ckl07d.ledgerlite.User.User;
-import com.h4ckl07d.ledgerlite.User.UserRepository;
+import com.h4ckl07d.ledgerlite.user.User;
+import com.h4ckl07d.ledgerlite.user.UserRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -22,7 +22,7 @@ public class CustomUserDetailService implements UserDetailsService {
 
         return org.springframework.security.core.userdetails.User
                 .withUsername(user.getEmail())
-                .password(user.getPassword())
+                .password(user.getPassword_hash())
                 .roles("USER")
                 .build();
     }
